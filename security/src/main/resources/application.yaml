@@ -1,0 +1,9 @@
+org:
+  pachkosti:
+    app:
+      jwtSecret: defrgtgtg
+      jwtExpirationMs: 86400000
+
+logging:
+  level:
+    org.springframework.security: TRACE
