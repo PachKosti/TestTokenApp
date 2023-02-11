@@ -4,6 +4,7 @@ import org.pachkosti.request.LoginRequest;
 import org.pachkosti.response.JwtResponse;
 import org.pachkosti.security.service.UserDetailsImpl;
 import org.pachkosti.security.util.JwtUtils;
+import org.pachkosti.security.util.JwtUtilsNimbus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -38,8 +39,8 @@ public class AuthController {
     PasswordEncoder encoder;
 
     @Autowired
-    JwtUtils jwtUtils;
-
+//    JwtUtils jwtUtils;
+    JwtUtilsNimbus jwtUtils;
     @PostMapping("/signin")
     public ResponseEntity<?> authenticateUser(@RequestBody LoginRequest loginRequest) {
 
@@ -59,7 +60,6 @@ public class AuthController {
                 userDetails.getUsername(),
                 userDetails.getEmail(),
                 roles));
-//        return ResponseEntity.ok("sucess");
     }
 
     @GetMapping("/one")

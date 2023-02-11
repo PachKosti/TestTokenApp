@@ -3,6 +3,7 @@ package org.pachkosti.security.filter;
 import lombok.extern.slf4j.Slf4j;
 import org.pachkosti.security.service.UserDetailsServiceImpl;
 import org.pachkosti.security.util.JwtUtils;
+import org.pachkosti.security.util.JwtUtilsNimbus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -20,7 +21,8 @@ import java.io.IOException;
 @Slf4j
 public class AuthTokenFilter extends OncePerRequestFilter {
     @Autowired
-    private JwtUtils jwtUtils;
+    private JwtUtilsNimbus jwtUtils;
+//    private JwtUtils jwtUtils;
 
     @Autowired
     private UserDetailsServiceImpl userDetailsService;
